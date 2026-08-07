@@ -112,7 +112,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl overflow-hidden bg-white border border-slate-200/80 p-0.5 flex items-center justify-center shadow-md shadow-indigo-100 shrink-0">
               <img 
-                src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-logo.png" 
+                src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
                 alt="Locker Logo" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-contain"
@@ -171,7 +171,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
         <div className="flex items-center gap-2.5">
           <div className="w-9 h-9 rounded-xl overflow-hidden bg-white border border-slate-200/80 p-0.5 flex items-center justify-center shadow-sm shrink-0">
             <img 
-              src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-logo.png" 
+              src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
               alt="Locker Logo" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-contain"

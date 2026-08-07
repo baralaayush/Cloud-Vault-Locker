@@ -111,7 +111,7 @@ const Login: React.FC = () => {
             <div className="flex items-center gap-4 mb-8">
               <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white border border-slate-200/80 p-1 flex items-center justify-center shadow-md shadow-indigo-100 shrink-0">
                 <img 
-                  src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-logo.png" 
+                  src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
                   alt="Locker Logo" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-contain"
