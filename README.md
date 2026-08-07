@@ -9,7 +9,6 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](https://opensource.org/licenses/MIT)
   [![Powered by Supabase](https://img.shields.io/badge/Backend-Supabase-3ECF8E.svg)](https://supabase.com)
-  [![Status](https://img.shields.io/badge/Status-Active_Development-blue.svg)]()
 
 </div>
 
@@ -27,15 +26,15 @@
 * **📄 Document Vault**: Store, search, and manage your important personal files directly via Supabase Storage.
 * **📝 Smart Memos**: Keep persistent notes, code snippets, and daily ideas synchronized in real-time.
 * **🔐 Secure Auth & RLS**: Seamless user authentication backed by Supabase RLS Security to protect your data.
-* **LOCKER PRO Version**: Locker is also avaliables in pro version with extreme feature like communication network among multiple user, file sharing, more storage space etc.
+* **💰 LOCKER PRO**: Locker is also avaliables in pro version with extreme feature like communication network among multiple user, file sharing, more storage space etc.
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: React.js / Next.js, Tailwind CSS
-* **Backend & Database**: Supabase (PostgreSQL, Realtime subscriptions)
+* **Frontend**: React.js / Vite, Tailwind CSS
+* **Backend & Database**: Supabase (PostgreSQL)
 
 ---
 
 ## 🚀 Getting Started
-Check it at: https://locker.baralaayush.com.np
+* **🔗**: https://locker.baralaayush.com.np
