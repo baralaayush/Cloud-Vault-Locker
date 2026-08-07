@@ -110,13 +110,15 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
       <aside className="hidden md:flex flex-col w-64 bg-white border-r border-slate-200/90 shadow-sm z-20">
         <div className="p-6 border-b border-slate-100/80 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img 
-              src="/logo.jpg" 
-              alt="Locker Logo" 
-              referrerPolicy="no-referrer"
-              className="w-11 h-11 rounded-2xl object-cover shadow-md shadow-indigo-200 shrink-0 border border-slate-200/60" 
-            />
-            <h1 className="font-extrabold text-2xl tracking-tight text-slate-900">Locker</h1>
+            <div className="w-11 h-11 rounded-2xl overflow-hidden bg-white border border-slate-200/80 p-0.5 flex items-center justify-center shadow-md shadow-indigo-100 shrink-0">
+              <img 
+                src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-logo.png" 
+                alt="Locker Logo" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <h1 className="font-extrabold text-2xl tracking-tight text-blue-600">Locker</h1>
           </div>
         </div>
         
@@ -167,15 +169,17 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
       {/* Mobile Nav Top */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 z-50 shadow-sm">
         <div className="flex items-center gap-2.5">
-          <img 
-            src="/logo.jpg" 
-            alt="Locker Logo" 
-            referrerPolicy="no-referrer"
-            className="w-9 h-9 rounded-xl object-cover shadow-sm shrink-0 border border-slate-200/60" 
-          />
+          <div className="w-9 h-9 rounded-xl overflow-hidden bg-white border border-slate-200/80 p-0.5 flex items-center justify-center shadow-sm shrink-0">
+            <img 
+              src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-logo.png" 
+              alt="Locker Logo" 
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-contain"
+            />
+          </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-base text-slate-900 block leading-none">Locker</span>
+              <span className="font-bold text-base text-blue-600 block leading-none">Locker</span>
               {userMode === 'pro' && (
                 <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-xs">
                   PRO

@@ -109,14 +109,16 @@ const Login: React.FC = () => {
           <div>
             {/* Brand Header */}
             <div className="flex items-center gap-4 mb-8">
-              <img 
-                src="/logo.jpg" 
-                alt="Locker Logo" 
-                referrerPolicy="no-referrer"
-                className="w-16 h-16 rounded-2xl object-cover shadow-md shadow-indigo-200 shrink-0 border border-slate-200/70"
-              />
+              <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white border border-slate-200/80 p-1 flex items-center justify-center shadow-md shadow-indigo-100 shrink-0">
+                <img 
+                  src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-logo.png" 
+                  alt="Locker Logo" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div className="inline-flex flex-col items-stretch w-fit">
-                <h1 className="text-4xl sm:text-[40px] font-black text-slate-900 tracking-tight leading-none whitespace-nowrap">Locker</h1>
+                <h1 className="text-4xl sm:text-[40px] font-black text-blue-600 tracking-tight leading-none whitespace-nowrap">Locker</h1>
                 <div className="mt-2 w-full">
                   <span className="text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-100/90 py-1 px-2.5 rounded-md text-center block w-full shadow-2xs whitespace-nowrap">
                     Cloud Vault Locker
