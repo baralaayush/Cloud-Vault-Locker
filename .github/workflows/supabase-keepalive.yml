@@ -2,7 +2,7 @@ name: Keep Supabase Awake
 
 on:
   schedule:
-    - cron: "0 * */5 * *"   # Runs every 12 hours (completely safe for the 7-day limit)
+   - cron: "0 0 */5 * *"  # Runs at 00:00 UTC on every 5th day of the month
   workflow_dispatch: {}     # Allows manual trigger under the Actions tab
 
 jobs:

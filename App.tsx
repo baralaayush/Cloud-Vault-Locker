@@ -23,29 +23,15 @@ const App: React.FC = () => {
 
     const checkSession = async () => {
       try {
-        const hash = window.location.hash;
-        const search = window.location.search;
-        const isRecovery = hash.includes('type=recovery') || search.includes('type=recovery');
-
-        if (!isRecovery) {
-          // Clear any stored local token artifacts & session storage on refresh
-          try {
-            localStorage.clear();
-            sessionStorage.clear();
-          } catch (e) {}
-          try {
-            await supabase.auth.signOut({ scope: 'local' });
-          } catch (err) {
-            // ignore local signout errors
-          }
-          setUser(null);
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user) {
+          setUser(session.user);
         } else {
-          const { data: { session } } = await supabase.auth.getSession();
-          setUser(session?.user ?? null);
+          setUser(null);
+        }
 
-          if (window.location.hash || window.location.search) {
-            window.history.replaceState(null, '', window.location.pathname);
-          }
+        if (window.location.hash || window.location.search) {
+          window.history.replaceState(null, '', window.location.pathname);
         }
       } catch (err) {
         console.error('Session initialization error:', err);
@@ -63,7 +49,7 @@ const App: React.FC = () => {
         if (window.location.hash || window.location.search) {
           window.history.replaceState(null, '', window.location.pathname);
         }
-      } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+      } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') {
         if (session?.user) {
           setUser(session.user);
         }
@@ -71,8 +57,8 @@ const App: React.FC = () => {
           window.history.replaceState(null, '', window.location.pathname);
         }
       } else if (event === 'SIGNED_OUT') {
-        // Do not automatically bounce active users out on background token expiration
-        // Logout occurs strictly on page refresh or explicit Logout button click.
+        setUser(null);
+        setIsRecoveryMode(false);
       }
     });
 
@@ -104,7 +90,12 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen">
       {user ? (
-        <Dashboard user={user} isRecoveryMode={isRecoveryMode} onLogout={handleLogout} />
+        <Dashboard 
+          user={user} 
+          isRecoveryMode={isRecoveryMode} 
+          onPasswordResetComplete={() => setIsRecoveryMode(false)}
+          onLogout={handleLogout} 
+        />
       ) : (
         <Login />
       )}

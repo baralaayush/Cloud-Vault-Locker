@@ -25,10 +25,16 @@ type Section = 'links' | 'docs' | 'memo' | 'settings';
 interface DashboardProps {
   user: User;
   isRecoveryMode?: boolean;
+  onPasswordResetComplete?: () => void;
   onLogout?: () => void;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onLogout }) => {
+const Dashboard: React.FC<DashboardProps> = ({ 
+  user, 
+  isRecoveryMode = false, 
+  onPasswordResetComplete,
+  onLogout 
+}) => {
   const [activeSection, setActiveSection] = useState<Section>(
     isRecoveryMode ? 'settings' : 'links'
   );
@@ -98,7 +104,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
       case 'memo': 
         return <Memos key={refreshKey} userMode={userMode} currentUser={user} currentUserName={userName} />;
       case 'settings': 
-        return <SettingsPanel user={user} userProfile={userProfile} isRecoveryMode={isRecoveryMode} onProfileUpdated={fetchProfile} />;
+        return <SettingsPanel user={user} userProfile={userProfile} isRecoveryMode={isRecoveryMode} onPasswordResetComplete={onPasswordResetComplete} onProfileUpdated={fetchProfile} />;
       default: 
         return <Links key={refreshKey} userMode={userMode} currentUser={user} currentUserName={userName} />;
     }
@@ -110,15 +116,13 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
       <aside className="hidden md:flex flex-col w-64 bg-white border-r border-slate-200/90 shadow-sm z-20">
         <div className="p-6 border-b border-slate-100/80 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-2xl overflow-hidden bg-white border border-slate-200/80 p-0.5 flex items-center justify-center shadow-md shadow-indigo-100 shrink-0">
-              <img 
-                src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
-                alt="Locker Logo" 
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <h1 className="font-extrabold text-2xl tracking-tight text-blue-600">Locker</h1>
+            <img 
+              src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
+              alt="Locker Logo" 
+              referrerPolicy="no-referrer"
+              className="w-10 h-10 object-contain shrink-0"
+            />
+            <h1 className="font-black text-2xl tracking-tight bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">Locker</h1>
           </div>
         </div>
         
@@ -169,17 +173,15 @@ const Dashboard: React.FC<DashboardProps> = ({ user, isRecoveryMode = false, onL
       {/* Mobile Nav Top */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 z-50 shadow-sm">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl overflow-hidden bg-white border border-slate-200/80 p-0.5 flex items-center justify-center shadow-sm shrink-0">
-            <img 
-              src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
-              alt="Locker Logo" 
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain"
-            />
-          </div>
+          <img 
+            src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
+            alt="Locker Logo" 
+            referrerPolicy="no-referrer"
+            className="w-8 h-8 object-contain shrink-0"
+          />
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-base text-blue-600 block leading-none">Locker</span>
+              <span className="font-black text-lg tracking-tight bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent block leading-none">Locker</span>
               {userMode === 'pro' && (
                 <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-xs">
                   PRO

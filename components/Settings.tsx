@@ -9,6 +9,7 @@ interface SettingsProps {
   user: User;
   userProfile?: UserProfile | null;
   isRecoveryMode?: boolean;
+  onPasswordResetComplete?: () => void;
   onProfileUpdated?: () => void;
 }
 
@@ -16,6 +17,7 @@ const Settings: React.FC<SettingsProps> = ({
   user, 
   userProfile, 
   isRecoveryMode = false,
+  onPasswordResetComplete,
   onProfileUpdated 
 }) => {
   // Profile state
@@ -110,12 +112,16 @@ const Settings: React.FC<SettingsProps> = ({
       setPassStatus({ 
         type: 'success', 
         message: isRecoveryMode 
-          ? 'Password updated successfully! You can now use your new password.' 
+          ? 'Password updated successfully! Recovery mode exited.' 
           : 'Password updated successfully.' 
       });
       setOldPassword('');
       setNewPassword('');
       setConfirmPassword('');
+
+      if (isRecoveryMode && onPasswordResetComplete) {
+        onPasswordResetComplete();
+      }
     } catch (err: any) {
       setPassStatus({ type: 'error', message: err.message || 'Update failed' });
     } finally {

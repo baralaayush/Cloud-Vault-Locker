@@ -109,16 +109,16 @@ const Login: React.FC = () => {
           <div>
             {/* Brand Header */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white border border-slate-200/80 p-1 flex items-center justify-center shadow-md shadow-indigo-100 shrink-0">
-                <img 
-                  src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
-                  alt="Locker Logo" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <img 
+                src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" 
+                alt="Locker Logo" 
+                referrerPolicy="no-referrer"
+                className="w-14 h-14 object-contain shrink-0"
+              />
               <div className="inline-flex flex-col items-stretch w-fit">
-                <h1 className="text-4xl sm:text-[40px] font-black text-blue-600 tracking-tight leading-none whitespace-nowrap">Locker</h1>
+                <h1 className="text-4xl sm:text-[42px] font-black tracking-tight leading-none whitespace-nowrap bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+                  Locker
+                </h1>
                 <div className="mt-2 w-full">
                   <span className="text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-100/90 py-1 px-2.5 rounded-md text-center block w-full shadow-2xs whitespace-nowrap">
                     Cloud Vault Locker
@@ -200,14 +200,14 @@ const Login: React.FC = () => {
 
               {/* Mode Toggle Pills */}
               {mode !== 'forgot' && (
-                <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200/80 shrink-0 self-start sm:self-auto">
+                <div className="flex bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80 shrink-0 self-start sm:self-auto">
                   <button
                     type="button"
                     onClick={() => switchMode('login')}
-                    className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
+                    className={`px-5 py-2 text-sm transition-all ${
                       mode === 'login'
-                        ? 'bg-white text-indigo-600 shadow-sm'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-blue-600 text-white font-bold rounded-xl shadow-sm'
+                        : 'text-slate-700 hover:text-slate-900 font-semibold'
                     }`}
                   >
                     Sign In
@@ -215,10 +215,10 @@ const Login: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => switchMode('signup')}
-                    className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
+                    className={`px-5 py-2 text-sm transition-all ${
                       mode === 'signup'
-                        ? 'bg-white text-indigo-600 shadow-sm'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-blue-600 text-white font-bold rounded-xl shadow-sm'
+                        : 'text-slate-700 hover:text-slate-900 font-semibold'
                     }`}
                   >
                     Register
@@ -258,7 +258,7 @@ const Login: React.FC = () => {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 transition-all text-base font-normal"
-                      placeholder="Your Name"
+                      placeholder="Your name"
                     />
                   </div>
                 </div>
@@ -339,7 +339,7 @@ const Login: React.FC = () => {
                 ) : mode === 'login' ? (
                   <>
                     <LogIn className="w-4 h-4" />
-                    Sign In to Workspace
+                    Sign In
                   </>
                 ) : mode === 'signup' ? (
                   <>

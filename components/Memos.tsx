@@ -39,33 +39,26 @@ const Memos: React.FC<MemosProps> = ({ userMode = 'user', currentUser, currentUs
   const [savedSuccess, setSavedSuccess] = useState(false);
 
   const fetchMemos = async () => {
-    if (!currentUser) {
+    if (!currentUser?.id) {
       setLoading(false);
       return;
     }
-    if (memos.length === 0) {
-      setLoading(true);
-    }
+    setLoading(true);
+
     try {
-      const fetchPromise = supabase
+      const { data, error } = await supabase
         .from('memos')
         .select('*')
         .eq('user_id', currentUser.id)
         .order('created_at', { ascending: false });
 
-      const timeoutPromise = new Promise<{ data: null; error: Error }>((resolve) =>
-        setTimeout(() => resolve({ data: null, error: new Error('Timeout') }), 5000)
-      );
-
-      const { data, error } = await Promise.race([fetchPromise, timeoutPromise]);
-
-      if (!error && data) {
+      if (error) {
+        console.error('Error fetching memos:', error);
+      } else if (data) {
         setMemos(data);
-      } else if (error) {
-        console.error("Error fetching memos:", error);
       }
     } catch (err) {
-      console.error("Error fetching memos:", err);
+      console.error('Error fetching memos:', err);
     } finally {
       setLoading(false);
     }

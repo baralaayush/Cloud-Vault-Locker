@@ -56,28 +56,22 @@ const Docs: React.FC<DocsProps> = ({ userMode = 'user', currentUser, currentUser
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const fetchDocs = async () => {
-    if (!currentUser) {
+    if (!currentUser?.id) {
       setLoading(false);
       return;
     }
-    if (docs.length === 0) {
-      setLoading(true);
-    }
+    setLoading(true);
 
     try {
-      const fetchPromise = supabase
+      const { data, error } = await supabase
         .from('docs')
         .select('*')
         .eq('user_id', currentUser.id)
         .order('created_at', { ascending: false });
 
-      const timeoutPromise = new Promise<{ data: null; error: Error }>((resolve) =>
-        setTimeout(() => resolve({ data: null, error: new Error('Timeout') }), 5000)
-      );
-
-      const { data, error } = await Promise.race([fetchPromise, timeoutPromise]);
-
-      if (!error && data) {
+      if (error) {
+        console.error('Error fetching docs:', error);
+      } else if (data) {
         setDocs(data);
       }
     } catch (err) {

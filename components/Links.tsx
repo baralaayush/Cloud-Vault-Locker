@@ -36,27 +36,23 @@ const Links: React.FC<LinksProps> = ({ userMode = 'user', currentUser, currentUs
   const [shareItemTarget, setShareItemTarget] = useState<Link | null>(null);
 
   const fetchLinks = async () => {
-    if (!currentUser) {
+    if (!currentUser?.id) {
       setLoading(false);
       return;
     }
-    if (links.length === 0) {
-      setLoading(true);
-    }
+    setLoading(true);
     try {
-      const fetchPromise = supabase
+      const { data, error } = await supabase
         .from('links')
         .select('*')
         .eq('user_id', currentUser.id)
         .order('created_at', { ascending: false });
 
-      const timeoutPromise = new Promise<{ data: null; error: Error }>((resolve) =>
-        setTimeout(() => resolve({ data: null, error: new Error('Timeout') }), 5000)
-      );
-
-      const { data, error } = await Promise.race([fetchPromise, timeoutPromise]);
-
-      if (!error && data) setLinks(data);
+      if (error) {
+        console.error('Error fetching links:', error);
+      } else if (data) {
+        setLinks(data);
+      }
     } catch (err) {
       console.error('Error fetching links:', err);
     } finally {
