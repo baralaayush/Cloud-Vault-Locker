@@ -26,7 +26,7 @@
 * **🔗 Quick Links**: Bookmark, tag, and categorize your essential web links and resources for instant access.
 * **📄 Document Vault**: Store, search, and manage your important personal files directly via Supabase Storage.
 * **📝 Smart Memos**: Keep persistent notes, code snippets, and daily ideas synchronized in real-time.
-* **🔐 Secure Auth & RLS**: Seamless user authentication backed by Supabase Row Level Security to protect your data.
+* **🔐 Secure Auth & RLS**: Seamless user authentication backed by Supabase RLS Security to protect your data.
 * **LOCKER PRO Version**: Locker is also avaliables in pro version with extreme feature like communication network among multiple user, file sharing, more storage space etc.
 ---
 
