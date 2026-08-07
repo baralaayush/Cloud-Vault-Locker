@@ -1,0 +1,18 @@
+{
+  "short_name": "Locker",
+  "name": "Locker",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "A secure multi-user dashboard for managing personal links, documents, and memos."
+}
