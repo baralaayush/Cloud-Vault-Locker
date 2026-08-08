@@ -119,8 +119,8 @@ const Login: React.FC = () => {
                 <h1 className="text-4xl sm:text-[42px] font-black tracking-tight leading-none whitespace-nowrap bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
                   Locker
                 </h1>
-                <div className="mt-2 w-full">
-                  <span className="text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-100/90 py-1 px-2.5 rounded-md text-center block w-full shadow-2xs whitespace-nowrap">
+                <div className="mt-1.5 w-full">
+                  <span className="text-[10px] sm:text-[11px] font-medium text-indigo-700 bg-indigo-50 border border-indigo-100/90 py-0.5 px-1 rounded-md text-center block w-full shadow-2xs whitespace-nowrap tracking-tight">
                     Cloud Vault Locker
                   </span>
                 </div>
@@ -206,7 +206,7 @@ const Login: React.FC = () => {
                     onClick={() => switchMode('login')}
                     className={`px-5 py-2 text-sm transition-all ${
                       mode === 'login'
-                        ? 'bg-blue-600 text-white font-bold rounded-xl shadow-sm'
+                        ? 'bg-indigo-600 text-white font-bold rounded-xl shadow-sm'
                         : 'text-slate-700 hover:text-slate-900 font-semibold'
                     }`}
                   >
@@ -217,7 +217,7 @@ const Login: React.FC = () => {
                     onClick={() => switchMode('signup')}
                     className={`px-5 py-2 text-sm transition-all ${
                       mode === 'signup'
-                        ? 'bg-blue-600 text-white font-bold rounded-xl shadow-sm'
+                        ? 'bg-indigo-600 text-white font-bold rounded-xl shadow-sm'
                         : 'text-slate-700 hover:text-slate-900 font-semibold'
                     }`}
                   >
