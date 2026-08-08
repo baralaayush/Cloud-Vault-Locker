@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locker</title>
     <link rel="icon" type="image/png" href="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png">
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png">
     <meta name="theme-color" content="#4f46e5">
     <meta name="mobile-web-app-capable" content="yes">
@@ -16,7 +16,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('./sw.js').then(function(registration) {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
             console.log('SW registered: ', registration.scope);
           }).catch(function(err) {
             console.log('SW registration failed: ', err);

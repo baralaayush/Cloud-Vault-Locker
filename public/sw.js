@@ -1,11 +1,8 @@
 const CACHE_NAME = 'locker-v1';
 const ASSETS_TO_CACHE = [
-  './',
-  './index.html',
-  './manifest.json',
-  './favicon.svg',
-  './icon-192.svg',
-  './icon-512.svg'
+  '/',
+  '/index.html',
+  '/manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
