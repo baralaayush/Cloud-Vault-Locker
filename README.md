@@ -13,7 +13,7 @@
 <h1 align="center">Locker (Cloud Vault Locker)</h1>
 
 <p align="center">
-  <strong>Personal Secure & Digital Cloud Vault Locker</strong> — The upgraded successor to <em>PortalHub</em>.
+  <strong>Personal Secure & Digital Cloud Vault Locker</strong> - The upgraded successor to <em>PortalHub</em>.
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 
 ## 📌 Overview & Evolution
 
-**Locker** is an all-in-one personal productivity vault built to eliminate tab overload and scattered notes. It brings your essential digital tools—links, documents, and memos—under one secure, unified dashboard.
+**Locker** is an all-in-one personal productivity vault built to eliminate tab overload and scattered notes. It brings your essential digital tools-links, documents, and memos-under one secure, unified dashboard.
 
 ### 🔄 What's New (Upgraded from PortalHub)
 * **Rebranded Core:** Transitioned from the legacy **PortalHub** layout to a full cloud vault architecture (**Locker**).
