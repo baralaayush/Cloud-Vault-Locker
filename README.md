@@ -2,6 +2,18 @@
   <img src="https://aayushbaralsite.wordpress.com/wp-content/uploads/2026/08/locker-app-title-logo.png" alt="Locker Logo" width="120" />
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="40" height="40" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width="40" height="40" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="40" height="40" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40" />
+</p>
+
 <h1 align="center">Locker</h1>
 
 <p align="center">
@@ -28,7 +40,7 @@
 
 **Locker** eliminates tab overload and scattered notes by bringing your essential productivity tools under one roof. Access your personal cloud vault anytime, anywhere, with structured organization and fast search capabilities.
 
-### 🔄 Evolution (Upgraded from PortalHub)
+### 🔄  What's New (Upgraded from PortalHub)
 * **Rebranded Core:** Evolved from the legacy **PortalHub** resource manager into a full digital cloud vault architecture (**Locker**).
 * **Enhanced Document Storage:** Direct file uploads, management, and retrieval powered by Supabase Storage.
 * **Modernized UI:** Redesigned responsive layout with Tailwind CSS and official branding assets.
